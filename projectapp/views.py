@@ -282,3 +282,20 @@ def orderNow(request):
 
 def order(request):
     return render(request, "order-now.html")
+
+
+def new_home(request):
+
+    faqs = FAQ.objects.filter(page='home')[:5]
+    important_testimonials = Testimonials.objects.filter(is_important=True)[:3]
+    other_testimonials = Testimonials.objects.filter(is_important=False).order_by('-date')[:3]
+    combined_testimonials = list(important_testimonials) + list(other_testimonials)
+    rating = Rating.objects.order_by('-updated_at').first()
+
+    context = {
+        "faqs":faqs,
+        "testimonials": combined_testimonials,
+        "rating" : rating,
+    }
+
+    return render(request, "new-home.html", context)
