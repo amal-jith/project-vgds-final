@@ -34,4 +34,6 @@ urlpatterns = [
 
     path('order/', views.order, name='order'),
 
+    path('aus-home/', views.new_home, name='new_home'),
+
 ]
