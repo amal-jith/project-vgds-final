@@ -3642,3 +3642,32 @@ background: #ffffff;
     border: none;
     border-radius: 0;
 }
+
+
+/** Secondary homepage **/
+
+/* reset the vertical swiper styles */
+.presentation-slider .swiper{
+  height: auto !important;
+  max-height: none !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+/* reset slide behaviour */
+.presentation-slider .swiper-slide{
+  height: auto !important;
+  width: 420px !important;
+  display: block !important;
+  justify-content: unset !important;
+  align-items: unset !important;
+}
+
+/* reset image size */
+.presentation-slider .swiper-slide img{
+  width: 100%;
+  height: auto !important;
+  object-fit: cover;
+  border-radius: 12px;
+}
